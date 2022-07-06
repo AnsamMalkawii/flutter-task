@@ -31,7 +31,18 @@ class DatabaseHelper {
     Alphabets(id: 1, arabicAlpha: 'ص', example: "صندوق"),
   ];
 
-  static Future<Database> database() async {
+  static Database? _database;
+
+  static Future<Database?> get database async {
+    if (_database == null) {
+      _database = await initDb();
+      return _database;
+    } else {
+      return _database;
+    }
+  }
+
+  static Future<sql.Database> initDb() async {
     final dbPath = await sql.getDatabasesPath();
     return sql.openDatabase(path.join(dbPath, 'CartProduct.db'),
         version: 1, onCreate: _onCreate);
@@ -74,20 +85,20 @@ class DatabaseHelper {
   }
 
   static Future<List<Map<String, dynamic>>> getUserData() async {
-    final db = await DatabaseHelper.database();
-    return db.query(userTableName);
+    final db = await DatabaseHelper.database;
+    return db!.query(userTableName);
   }
 
   static Future<List<Map<String, dynamic>>> getAlphabetsData() async {
-    final db = await DatabaseHelper.database();
-    return db.query(alphaTableName);
+    final db = await DatabaseHelper.database;
+    return db!.query(alphaTableName);
   }
 
   static Future<List<Map<String, dynamic>>> queryDatabase(
       String email, String password) async {
-    final db = await DatabaseHelper.database();
+    final db = await DatabaseHelper.database;
 
-    var res = db.rawQuery(
+    var res = db!.rawQuery(
         'SELECT * FROM $userTableName WHERE $cEmail = ? and $cPassword = ?',
         [email, password]);
 

@@ -8,6 +8,7 @@ class AlpabetsProviders with ChangeNotifier {
   List<Alphabets> get alphabets => _alphabets;
 
   Future<void> getAndFetchAlphabets() async {
+    _alphabets = [];
     var data = await DatabaseHelper.getAlphabetsData();
     for (var i in data) {
       _alphabets.add(Alphabets.fromJson(i));

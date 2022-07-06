@@ -26,13 +26,13 @@ class CardTile extends StatelessWidget {
           child: alphabet.isChossed
               ? CustomeText(
                   label: alphabet.example,
-                  size: 32,
+                  size: 22,
                   color: Colors.white,
                   alignment: Alignment.center,
                 )
               : CustomeText(
                   label: alphabet.arabicAlpha,
-                  size: 28,
+                  size: 32,
                   color: Colors.white,
                   alignment: Alignment.center,
                 ),
