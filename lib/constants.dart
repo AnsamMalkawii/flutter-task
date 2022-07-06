@@ -1,0 +1,12 @@
+const String userTableName = 'users';
+const String alphaTableName = 'alphabets';
+const String cUserName = 'name';
+const String cEmail = 'email';
+const String cPassword = 'password';
+const String cBirthdate = 'birthdate';
+const String cId = 'id';
+const String cArabicAlphabet = 'arabicAlpha';
+const String cExample = 'example';
+const String csharedLogged = 'userIsLogged';
+const String csharedEmail = 'userEmail';
+const String csharedPassword = 'userPassword';
