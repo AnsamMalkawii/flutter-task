@@ -9,11 +9,10 @@ class AlpabetsProviders with ChangeNotifier {
 
   Future<void> getAndFetchAlphabets() async {
     _alphabets = [];
-    var data = await DatabaseHelper.getAlphabetsData();
-    for (var i in data) {
+    var alpha = await DatabaseHelper.getAlphabetsData();
+    for (var i in alpha) {
       _alphabets.add(Alphabets.fromJson(i));
     }
-    print(_alphabets);
     notifyListeners();
   }
 }

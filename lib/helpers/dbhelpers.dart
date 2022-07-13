@@ -1,14 +1,13 @@
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:sqflite/sqlite_api.dart';
 import 'package:path/path.dart' as path;
-
 import '../constants.dart';
 import '../models/alphabets.dart';
 import '../models/user.dart';
 
 class DatabaseHelper {
   static final User _user = User(
-      birthdate: DateTime.parse("1993-11-12").millisecondsSinceEpoch,
+      birthdate: DateTime.parse("1993-11-11").millisecondsSinceEpoch,
       email: 'ansamamalkawi@gmail.com',
       id: 1,
       name: 'Ansam Malkawi',
@@ -56,8 +55,7 @@ class DatabaseHelper {
       $cPassword TEXT NOT NULL,
       $cBirthdate DATETIME NOT NULL
 
-    )
-''');
+    )''');
 
     await db.execute(''' CREATE TABLE $alphaTableName (
       $cId INTEGER NOT NULL,
