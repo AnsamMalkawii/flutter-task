@@ -7,7 +7,7 @@ import '../models/user.dart';
 
 class DatabaseHelper {
   static final User _user = User(
-      birthdate: DateTime.parse("1993-11-12").millisecondsSinceEpoch,
+      birthdate: DateTime.parse("1993-11-11").millisecondsSinceEpoch,
       email: 'ansamamalkawi@gmail.com',
       id: 1,
       name: 'Ansam Malkawi',
