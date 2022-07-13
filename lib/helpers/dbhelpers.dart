@@ -1,7 +1,6 @@
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:sqflite/sqlite_api.dart';
 import 'package:path/path.dart' as path;
-
 import '../constants.dart';
 import '../models/alphabets.dart';
 import '../models/user.dart';
@@ -56,8 +55,7 @@ class DatabaseHelper {
       $cPassword TEXT NOT NULL,
       $cBirthdate DATETIME NOT NULL
 
-    )
-''');
+    )''');
 
     await db.execute(''' CREATE TABLE $alphaTableName (
       $cId INTEGER NOT NULL,

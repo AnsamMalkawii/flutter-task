@@ -13,7 +13,6 @@ class AlpabetsProviders with ChangeNotifier {
     for (var i in data) {
       _alphabets.add(Alphabets.fromJson(i));
     }
-    print(_alphabets);
     notifyListeners();
   }
 }
